@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/internal-system/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/internal-system/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/internal-system",
+  "projects": {
+    "internal-system": {
+      "type": "application",
+      "root": "apps/internal-system",
+      "entryFile": "main",
+      "sourceRoot": "apps/internal-system/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/internal-system/tsconfig.app.json"
+      }
+    },
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "date-time": {
+      "type": "library",
+      "root": "libs/date-time",
+      "entryFile": "index",
+      "sourceRoot": "libs/date-time/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/date-time/tsconfig.lib.json"
+      }
+    },
+    "auths": {
+      "type": "application",
+      "root": "apps/auths",
+      "entryFile": "main",
+      "sourceRoot": "apps/auths/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auths/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "entryFile": "main",
+      "sourceRoot": "apps/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    }
+  }
+}
