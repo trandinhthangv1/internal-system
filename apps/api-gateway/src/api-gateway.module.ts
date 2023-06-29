@@ -10,12 +10,12 @@ import { AuthsModule } from './auths/auths.module';
         {
           name: 'AUTH_SERVICE',
           transport: Transport.TCP,
-          options: { port: 3001 },
+          options: { host: 'auths-service', port: 3002 },
         },
         {
           name: 'USER_SERVICE',
           transport: Transport.TCP,
-          options: { port: 3002 },
+          options: { host: 'users-service', port: 3003 },
         },
       ],
       isGlobal: true,

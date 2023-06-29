@@ -8,7 +8,8 @@ async function bootstrap() {
     {
       transport: Transport.TCP,
       options: {
-        port: 3001,
+        host: 'auths-service',
+        port: 3002,
         retryAttempts: 5,
         retryDelay: 3000,
       },
