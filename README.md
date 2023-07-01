@@ -52,7 +52,7 @@ scp -i path/to/file ./internal-system.zip user@host:/path/to/folder
 - In EC2, unzip
 
 ```sh
-sudo apt instal unzip && unzip internal-system.zip
+sudo apt install unzip && unzip internal-system.zip
 ```
 
 - Build image with run
@@ -74,14 +74,22 @@ docker run -p 3001:3001 --network internal-system --name api-gateway-service api
 docker run -p 3002:3002 --network internal-system --name auths-service auths-service
 docker run -p 3003:3003 --network internal-system --name users-service users-service
 ```
+## NOTE
+
+- **In image and container level, create network and assign containers to network**
+- **In source code level, add `host` in `createMicroservice` for all services and `ClientsModule.register` in `api-gateway`**
+- **In EC2 level, need open port 3001 in inbound (security group)**
 
 🎉🎉🎉 **Done**
 
+### Deploy Stage 2 (Fake to test service per EC2 instance)
+
+- Create three EC2 instance to deploy service: Api gateway, auth, user
+
 ## NOTE
 
-- **In image and container level, Create network and assign containers to network**
-- **In source code level, add `host` in `createMicroservice` for all services and `ClientsModule.register` in `api-gateway`**
-- **In EC2 level, need open port 3001 in inbound (security group)**
+- **In source code level, add `host` is IP (using IP not http://ip) in  `ClientsModule.register` in `api-gateway`**
+
 
 ## Technologies
 
