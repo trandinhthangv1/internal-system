@@ -26,7 +26,7 @@ docker run -p 3003:3003 --network internal-system --name users-service users-ser
 
 ## Setup to Prod
 
-### Deploy Stage 1 (Fake to test)
+### Deploy Stage 1 (Create manual only one EC2 instance)
 
 1. Create EC2 instance
 
@@ -74,6 +74,7 @@ docker run -p 3001:3001 --network internal-system --name api-gateway-service api
 docker run -p 3002:3002 --network internal-system --name auths-service auths-service
 docker run -p 3003:3003 --network internal-system --name users-service users-service
 ```
+
 ## NOTE
 
 - **In image and container level, create network and assign containers to network**
@@ -82,14 +83,28 @@ docker run -p 3003:3003 --network internal-system --name users-service users-ser
 
 🎉🎉🎉 **Done**
 
-### Deploy Stage 2 (Fake to test service per EC2 instance)
+### Deploy Stage 2 (Create manual 3 services per 3 EC2 instances)
 
 - Create three EC2 instance to deploy service: Api gateway, auth, user
 
 ## NOTE
 
-- **In source code level, add `host` is IP (using IP not http://ip) in  `ClientsModule.register` in `api-gateway`**
+- **In source code level, add `host` is IP (using IP not http://ip) in `ClientsModule.register` in `api-gateway`**
 
+### Deploy Stage 3 (Setup complete in development and production)
+
+- Create NATs
+- Create MongoDB
+- Create testing (Jest)
+- Separate stage and create docker-compose
+
+### Deploy Stage 4 (Integrate Github Action)
+
+### Deploy Stage 5 (Integrate K8S)
+
+### Deploy Stage 6 (Complete CI/CD)
+
+- Update Github Action to auto build & deploy project
 
 ## Technologies
 
@@ -99,6 +114,9 @@ docker run -p 3003:3003 --network internal-system --name users-service users-ser
 | MongoDB       |
 | Microservice  |
 | NATs          |
+| Redis Cache   |
+| JestJS        |
 | Docker        |
 | Github Action |
+| K8S           |
 | AWS           |
