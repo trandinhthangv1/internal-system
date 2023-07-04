@@ -6,12 +6,10 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AuthsModule,
     {
-      transport: Transport.TCP,
+      transport: Transport.NATS,
       options: {
-        host: 'auths-service',
-        port: 3002,
-        retryAttempts: 5,
-        retryDelay: 3000,
+        servers: ['nats://localhost:4222'],
+        // servers: ['nats://auths-service:4222'],
       },
     },
   );

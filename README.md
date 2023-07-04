@@ -93,9 +93,40 @@ docker run -p 3003:3003 --network internal-system --name users-service users-ser
 
 ### Deploy Stage 3 (Setup complete in development and production)
 
-- Create NATs
-- Create MongoDB
-- Create testing (Jest)
+- Create NATs ✅
+
+  - `docker pull nats`
+  - `docker run -d --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats`
+  - Update microservices, example:
+
+  ```javascript
+  {
+    transport: Transport.NATS,
+    options: {
+      servers: ['nats://localhost:4222'],
+    },
+  }
+  ```
+
+  - Update client, example:
+
+  ```javascript
+  {
+    name: 'AUTH_SERVICE',
+    transport: Transport.NATS,
+    options: {
+      servers: ['nats://localhost:4222'],
+    },
+  }
+  ```
+
+- Create MongoDB ✅
+
+  - `docker pull mongo`
+  - `docker run -p 27017:27017 --name mongo -d mongo`
+  - To test: `docker exec -it mongo bash`
+
+- Create testing (Jest) ✅
 - Separate stage and create docker-compose
 
 ### Deploy Stage 4 (Integrate Github Action)
