@@ -78,7 +78,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@lib/date-time(|/.*)$": "<rootDir>/libs/date-time/src/$1"
+      "^@lib/date-time(|/.*)$": "<rootDir>/libs/date-time/src/$1",
+      "^@libs/sum-two(|/.*)$": "<rootDir>/libs/sum-two/src/$1"
     }
   }
 }

@@ -23,6 +23,12 @@
       ],
       "@libs/date-time/*": [
         "libs/date-time/src/*"
+      ],
+      "@libs/sum-two": [
+        "libs/sum-two/src"
+      ],
+      "@libs/sum-two/*": [
+        "libs/sum-two/src/*"
       ]
     }
   }

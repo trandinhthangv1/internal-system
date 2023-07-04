@@ -45,6 +45,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/date-time/tsconfig.lib.json"
       }
+    },
+    "sum-two": {
+      "type": "library",
+      "root": "libs/sum-two",
+      "entryFile": "index",
+      "sourceRoot": "libs/sum-two/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/sum-two/tsconfig.lib.json"
+      }
     }
   }
 }
