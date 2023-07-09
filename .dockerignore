@@ -7,7 +7,6 @@
 node_modules
 
 # Environment (contains sensitive data)
-*.env
 
 # Misc
 .eslintrc.js

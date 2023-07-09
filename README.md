@@ -70,9 +70,9 @@ docker network create internal-system
 7.  Run container
 
 ```sh
-docker run -p 3001:3001 --network internal-system --name api-gateway-service api-gateway-service
-docker run -p 3002:3002 --network internal-system --name auths-service auths-service
-docker run -p 3003:3003 --network internal-system --name users-service users-service
+docker run -p 3001:3001  --name api-gateway-service api-gateway-service
+docker run -p 3002:3002  --name auths-service auths-service
+docker run -p 3003:3003  --name users-service users-service
 ```
 
 ## NOTE
