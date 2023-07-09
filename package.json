@@ -23,14 +23,17 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/api-gateway/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/orders/test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/microservices": "^10.0.3",
+    "@nestjs/mongoose": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "mongoose": "^7.3.1",
+    "nats": "^2.15.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
@@ -78,7 +81,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@lib/date-time(|/.*)$": "<rootDir>/libs/date-time/src/$1",
+      "^@libs/date-time(|/.*)$": "<rootDir>/libs/date-time/src/$1",
       "^@libs/sum-two(|/.*)$": "<rootDir>/libs/sum-two/src/$1"
     }
   }

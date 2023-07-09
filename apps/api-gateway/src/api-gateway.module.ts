@@ -9,15 +9,21 @@ import { AuthsModule } from './auths/auths.module';
       clients: [
         {
           name: 'AUTH_SERVICE',
-          transport: Transport.TCP,
-          // options: { host: 'auths-service', port: 3002 },
-          options: { host: '3.80.152.125', port: 3002 },
+          transport: Transport.NATS,
+          options: {
+            servers: ['nats://localhost:4222'],
+            // servers: ['nats://auths-service:4222'],
+            // servers: ['nats://3.80.152.125:4222'],
+          },
         },
         {
           name: 'USER_SERVICE',
-          transport: Transport.TCP,
-          // options: { host: 'users-service', port: 3003 },
-          options: { host: '3.91.232.167', port: 3003 },
+          transport: Transport.NATS,
+          options: {
+            servers: ['nats://localhost:4222'],
+            // servers: ['nats://users-service:4222'],
+            // servers: ['nats://3.91.232.167:4222'],
+          },
         },
       ],
       isGlobal: true,

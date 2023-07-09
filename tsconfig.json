@@ -18,18 +18,10 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/date-time": [
-        "libs/date-time/src"
-      ],
-      "@libs/date-time/*": [
-        "libs/date-time/src/*"
-      ],
-      "@libs/sum-two": [
-        "libs/sum-two/src"
-      ],
-      "@libs/sum-two/*": [
-        "libs/sum-two/src/*"
-      ]
+      "@libs/date-time": ["libs/date-time/src"],
+      "@libs/date-time/*": ["libs/date-time/src/*"],
+      "@libs/sum-two": ["libs/sum-two/src"],
+      "@libs/sum-two/*": ["libs/sum-two/src/*"]
     }
   }
 }
